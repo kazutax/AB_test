@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ab_test"
+version = "0.1.0"
+description = ""
+authors = ["Kazuki Takahashi <kazutak@outlook.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.13"
+jupyter = "^1.0.0"
+notebook = "^7.0.4"
+scipy = "^1.11.2"
+matplotlib = "^3.8.0"
+arviz = "^0.16.1"
+pymc3 = "3.9.3"
+
+[tool.poetry.dev-dependencies]
+ipykernel = "^6.25.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
