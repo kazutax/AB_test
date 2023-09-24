@@ -10,7 +10,8 @@ Bayesian A/B Testing について学ぶ
 > p-value や結果の解釈が一人歩きして辛くなるため、ベイズ推論を使った解釈の導入を進める。
 
 ## 主な参考図書
-+ [ウェブ最適化ではじめる機械学習](https://www.amazon.co.jp/dp/4873119162) <br>
++ [ウェブ最適化ではじめる機械学習](https://www.amazon.co.jp/dp/4873119162)
++ [Sample Colab Code](https://colab.research.google.com/drive/19KX0LE8aVf4cQ7DDsvl6VoV_Psh9mQaM?usp=sharing#forceEdit=true&sandboxMode=true&scrollTo=v5_-ryxucFc9)
 
 ## その他参考サイトなど
 + [ベイズ推定を用いたA/Bテストの評価を実際に試してみた](https://www.ai-shift.co.jp/techblog/2952)
