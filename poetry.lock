@@ -58,14 +58,19 @@ tests = ["pytest"]
 
 [[package]]
 name = "arrow"
-version = "1.2.3"
+version = "1.3.0"
 description = "Better dates & times for Python"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 
 [package.dependencies]
 python-dateutil = ">=2.7.0"
+types-python-dateutil = ">=2.8.10"
+
+[package.extras]
+doc = ["doc8", "sphinx (>=7.0.0)", "sphinx-autobuild", "sphinx-autodoc-typehints", "sphinx_rtd_theme (>=1.3.0)"]
+test = ["dateparser (>=1.0.0,<2.0.0)", "pre-commit", "pytest", "pytest-cov", "pytest-mock", "pytz (==2021.1)", "simplejson (>=3.0.0,<4.0.0)"]
 
 [[package]]
 name = "arviz"
@@ -131,11 +136,14 @@ tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pyte
 
 [[package]]
 name = "babel"
-version = "2.12.1"
+version = "2.13.0"
 description = "Internationalization utilities"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[package.extras]
+dev = ["pytest (>=6.0)", "pytest-cov", "freezegun (>=1.0,<2.0)"]
 
 [[package]]
 name = "backcall"
@@ -185,18 +193,18 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "cffi"
-version = "1.15.1"
+version = "1.16.0"
 description = "Foreign Function Interface for Python calling C code."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 
 [package.dependencies]
 pycparser = "*"
 
 [[package]]
 name = "charset-normalizer"
-version = "3.2.0"
+version = "3.3.0"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
 category = "main"
 optional = false
@@ -249,11 +257,15 @@ test-no-images = ["pytest", "pytest-cov", "wurlitzer"]
 
 [[package]]
 name = "cycler"
-version = "0.11.0"
+version = "0.12.0"
 description = "Composable style cycles"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
+
+[package.extras]
+docs = ["ipython", "matplotlib", "numpydoc", "sphinx"]
+tests = ["pytest", "pytest-cov", "pytest-xdist"]
 
 [[package]]
 name = "debugpy"
@@ -292,18 +304,18 @@ test = ["pytest (>=6)"]
 
 [[package]]
 name = "executing"
-version = "1.2.0"
+version = "2.0.0"
 description = "Get the currently executing AST node of a frame, and other information"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.extras]
-tests = ["asttokens", "pytest", "littleutils", "rich"]
+tests = ["asttokens (>=2.1.0)", "ipython", "pytest", "coverage", "coverage-enable-subprocess", "littleutils", "rich"]
 
 [[package]]
 name = "fastjsonschema"
-version = "2.18.0"
+version = "2.18.1"
 description = "Fastest Python implementation of JSON schema"
 category = "main"
 optional = false
@@ -322,7 +334,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "fonttools"
-version = "4.42.1"
+version = "4.43.1"
 description = "Tools to manipulate font files"
 category = "main"
 optional = false
@@ -447,7 +459,7 @@ test = ["flaky", "ipyparallel", "pre-commit", "pytest-asyncio", "pytest-cov", "p
 
 [[package]]
 name = "ipython"
-version = "8.15.0"
+version = "8.16.1"
 description = "IPython: Productive Interactive Computing"
 category = "main"
 optional = false
@@ -521,7 +533,7 @@ arrow = ">=0.15.0"
 
 [[package]]
 name = "jedi"
-version = "0.19.0"
+version = "0.19.1"
 description = "An autocompletion tool for Python that can be used for text editors."
 category = "main"
 optional = false
@@ -533,7 +545,7 @@ parso = ">=0.8.3,<0.9.0"
 [package.extras]
 docs = ["Jinja2 (==2.11.3)", "MarkupSafe (==1.1.1)", "Pygments (==2.8.1)", "alabaster (==0.7.12)", "babel (==2.9.1)", "chardet (==4.0.0)", "commonmark (==0.8.1)", "docutils (==0.17.1)", "future (==0.18.2)", "idna (==2.10)", "imagesize (==1.2.0)", "mock (==1.0.1)", "packaging (==20.9)", "pyparsing (==2.4.7)", "pytz (==2021.1)", "readthedocs-sphinx-ext (==2.1.4)", "recommonmark (==0.5.0)", "requests (==2.25.1)", "six (==1.15.0)", "snowballstemmer (==2.1.0)", "sphinx-rtd-theme (==0.4.3)", "sphinx (==1.8.5)", "sphinxcontrib-serializinghtml (==1.1.4)", "sphinxcontrib-websupport (==1.2.4)", "urllib3 (==1.26.4)"]
 qa = ["flake8 (==5.0.4)", "mypy (==0.971)", "types-setuptools (==67.2.0.1)"]
-testing = ["Django (<3.1)", "attrs", "colorama", "docopt", "pytest (<7.0.0)"]
+testing = ["django", "attrs", "colorama", "docopt", "pytest (<7.0.0)"]
 
 [[package]]
 name = "jinja2"
@@ -664,7 +676,7 @@ test = ["flaky", "pexpect", "pytest"]
 
 [[package]]
 name = "jupyter-core"
-version = "5.3.1"
+version = "5.3.2"
 description = "Jupyter core package. A base package on which Jupyter projects rely."
 category = "main"
 optional = false
@@ -880,7 +892,7 @@ traitlets = "*"
 
 [[package]]
 name = "mistune"
-version = "3.0.1"
+version = "3.0.2"
 description = "A sane and fast Markdown parser with useful plugins and renderers"
 category = "main"
 optional = false
@@ -907,7 +919,7 @@ test = ["flaky", "ipykernel (>=6.19.3)", "ipython", "ipywidgets", "nbconvert (>=
 
 [[package]]
 name = "nbconvert"
-version = "7.8.0"
+version = "7.9.2"
 description = "Converting Jupyter Notebooks"
 category = "main"
 optional = false
@@ -937,7 +949,7 @@ docs = ["ipykernel", "ipython", "myst-parser", "nbsphinx (>=0.2.12)", "pydata-sp
 qtpdf = ["nbconvert"]
 qtpng = ["pyqtwebengine (>=5.15)"]
 serve = ["tornado (>=6.1)"]
-test = ["flaky", "ipykernel", "ipywidgets (>=7)", "pre-commit", "pytest", "pytest-dependency"]
+test = ["flaky", "ipykernel", "ipywidgets (>=7)", "pytest", "pytest-dependency"]
 webpdf = ["playwright"]
 
 [[package]]
@@ -1018,7 +1030,7 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "packaging"
-version = "23.1"
+version = "23.2"
 description = "Core utilities for Python packages"
 category = "main"
 optional = false
@@ -1134,7 +1146,7 @@ tests = ["check-manifest", "coverage", "defusedxml", "markdown2", "olefile", "pa
 
 [[package]]
 name = "platformdirs"
-version = "3.10.0"
+version = "3.11.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 category = "main"
 optional = false
@@ -1395,7 +1407,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "rpds-py"
-version = "0.10.3"
+version = "0.10.4"
 description = "Python bindings to Rust's persistent data structures (rpds)"
 category = "main"
 optional = false
@@ -1403,7 +1415,7 @@ python-versions = ">=3.8"
 
 [[package]]
 name = "scipy"
-version = "1.11.2"
+version = "1.11.3"
 description = "Fundamental algorithms for scientific computing in Python"
 category = "main"
 optional = false
@@ -1432,7 +1444,7 @@ win32 = ["pywin32"]
 
 [[package]]
 name = "setuptools-scm"
-version = "8.0.3"
+version = "8.0.4"
 description = "the blessed package to manage your versions by scm tags"
 category = "main"
 optional = false
@@ -1441,12 +1453,12 @@ python-versions = ">=3.8"
 [package.dependencies]
 packaging = ">=20"
 tomli = {version = ">=1", markers = "python_version < \"3.11\""}
-typing-extensions = {version = "*", markers = "python_version < \"3.11\""}
+typing-extensions = "*"
 
 [package.extras]
 docs = ["entangled-cli", "mkdocs", "mkdocs-entangled-plugin", "mkdocs-material", "mkdocstrings", "pygments"]
 rich = ["rich"]
-test = ["pytest", "rich", "virtualenv (>20)"]
+test = ["build", "pytest", "rich", "wheel"]
 
 [[package]]
 name = "six"
@@ -1474,7 +1486,7 @@ python-versions = ">=3.8"
 
 [[package]]
 name = "stack-data"
-version = "0.6.2"
+version = "0.6.3"
 description = "Extract data from python stack frames and tracebacks for informative displays"
 category = "main"
 optional = false
@@ -1555,7 +1567,7 @@ python-versions = ">= 3.8"
 
 [[package]]
 name = "traitlets"
-version = "5.10.0"
+version = "5.11.2"
 description = "Traitlets Python configuration system"
 category = "main"
 optional = false
@@ -1564,6 +1576,14 @@ python-versions = ">=3.8"
 [package.extras]
 docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["argcomplete (>=3.0.3)", "mypy (>=1.5.1)", "pre-commit", "pytest-mock", "pytest-mypy-testing", "pytest (>=7.0,<7.5)"]
+
+[[package]]
+name = "types-python-dateutil"
+version = "2.8.19.14"
+description = "Typing stubs for python-dateutil"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "typing-extensions"
@@ -1594,7 +1614,7 @@ dev = ["types-pyyaml", "mypy", "flake8", "flake8-annotations", "flake8-bandit", 
 
 [[package]]
 name = "urllib3"
-version = "2.0.5"
+version = "2.0.6"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 category = "main"
 optional = false
@@ -1608,7 +1628,7 @@ zstd = ["zstandard (>=0.18.0)"]
 
 [[package]]
 name = "wcwidth"
-version = "0.2.6"
+version = "0.2.8"
 description = "Measures the displayed width of unicode strings in a terminal"
 category = "main"
 optional = false
@@ -1657,7 +1677,7 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "xarray"
-version = "2023.8.0"
+version = "2023.9.0"
 description = "N-D labeled arrays and datasets in Python"
 category = "main"
 optional = false
@@ -1670,8 +1690,7 @@ pandas = ">=1.4"
 
 [package.extras]
 accel = ["scipy", "bottleneck", "numbagg", "flox"]
-complete = ["netcdf4", "h5netcdf", "scipy", "zarr", "fsspec", "cftime", "pooch", "bottleneck", "numbagg", "flox", "dask", "matplotlib", "seaborn", "nc-time-axis", "pydap"]
-docs = ["netcdf4", "h5netcdf", "scipy", "zarr", "fsspec", "cftime", "pooch", "bottleneck", "numbagg", "flox", "dask", "matplotlib", "seaborn", "nc-time-axis", "sphinx-autosummary-accessors", "sphinx-rtd-theme", "ipython", "ipykernel", "jupyter-client", "nbsphinx", "scanpydoc", "pydap"]
+complete = ["xarray"]
 io = ["netcdf4", "h5netcdf", "scipy", "zarr", "fsspec", "cftime", "pooch", "pydap"]
 parallel = ["dask"]
 viz = ["matplotlib", "seaborn", "nc-time-axis"]
@@ -1710,7 +1729,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9, <3.13"
-content-hash = "eefdd18338dfd0f0c41483721fc8606a08ad75a6b8d96f3038edca387900d369"
+content-hash = "c5a5796f6a92cea685b73bb02da99e32d32bf1df8754f072a253c2a00236b39e"
 
 [metadata.files]
 anyio = []
@@ -1757,10 +1776,7 @@ charset-normalizer = []
 colorama = []
 comm = []
 contourpy = []
-cycler = [
-    {file = "cycler-0.11.0-py3-none-any.whl", hash = "sha256:3a27e95f763a428a739d2add979fa7494c912a32c17c4c38c4d5f082cad165a3"},
-    {file = "cycler-0.11.0.tar.gz", hash = "sha256:9c87405839a19696e837b3b818fed3f5f69f16f1eec1a1ad77e043dcea9c772f"},
-]
+cycler = []
 debugpy = []
 decorator = []
 defusedxml = [
@@ -1890,6 +1906,7 @@ tinycss2 = []
 tomli = []
 tornado = []
 traitlets = []
+types-python-dateutil = []
 typing-extensions = []
 tzdata = []
 uri-template = []
