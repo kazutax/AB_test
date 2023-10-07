@@ -170,18 +170,26 @@ lxml = ["lxml"]
 
 [[package]]
 name = "bleach"
-version = "6.0.0"
+version = "6.1.0"
 description = "An easy safelist-based HTML-sanitizing tool."
 category = "main"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 
 [package.dependencies]
 six = ">=1.9.0"
 webencodings = "*"
 
 [package.extras]
-css = ["tinycss2 (>=1.1.0,<1.2)"]
+css = ["tinycss2 (>=1.1.0,<1.3)"]
+
+[[package]]
+name = "cachetools"
+version = "5.3.1"
+description = "Extensible memoizing collections and decorators"
+category = "main"
+optional = false
+python-versions = ">=3.7"
 
 [[package]]
 name = "certifi"
@@ -211,6 +219,14 @@ optional = false
 python-versions = ">=3.7.0"
 
 [[package]]
+name = "cloudpickle"
+version = "2.2.1"
+description = "Extended pickling support for Python objects"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "colorama"
 version = "0.4.6"
 description = "Cross-platform colored terminal text."
@@ -235,6 +251,35 @@ test = ["pytest"]
 typing = ["mypy (>=0.990)"]
 
 [[package]]
+name = "cons"
+version = "0.4.6"
+description = "An implementation of Lisp/Scheme-like cons in Python."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+logical-unification = ">=0.4.0"
+
+[[package]]
+name = "contourpy"
+version = "1.1.0"
+description = "Python library for calculating contours of 2D quadrilateral grids"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+numpy = ">=1.16"
+
+[package.extras]
+docs = ["furo", "sphinx-copybutton"]
+bokeh = ["bokeh", "selenium"]
+mypy = ["contourpy", "docutils-stubs", "mypy (==1.2.0)", "types-pillow"]
+test = ["contourpy", "matplotlib", "pillow"]
+test-no-images = ["pytest", "pytest-cov", "wurlitzer"]
+
+[[package]]
 name = "contourpy"
 version = "1.1.1"
 description = "Python library for calculating contours of 2D quadrilateral grids"
@@ -243,10 +288,7 @@ optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-numpy = [
-    {version = ">=1.16,<2.0", markers = "python_version <= \"3.11\""},
-    {version = ">=1.26.0rc1,<2.0", markers = "python_version >= \"3.12\""},
-]
+numpy = {version = ">=1.16,<2.0", markers = "python_version <= \"3.11\""}
 
 [package.extras]
 docs = ["furo", "sphinx (>=7.2)", "sphinx-copybutton"]
@@ -292,6 +334,18 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "etuples"
+version = "0.3.9"
+description = "Python S-expression emulation using tuple-like objects."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+cons = "*"
+multipledispatch = "*"
+
+[[package]]
 name = "exceptiongroup"
 version = "1.1.3"
 description = "Backport of PEP 654 (exception groups)"
@@ -331,6 +385,19 @@ description = "A nested progress with plotting options for fastai"
 category = "main"
 optional = false
 python-versions = ">=3.6"
+
+[[package]]
+name = "filelock"
+version = "3.12.4"
+description = "A platform independent file lock."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+docs = ["furo (>=2023.7.26)", "sphinx-autodoc-typehints (>=1.24)", "sphinx (>=7.1.2)"]
+testing = ["covdefaults (>=2.3)", "coverage (>=7.3)", "diff-cover (>=7.7)", "pytest-cov (>=4.1)", "pytest-mock (>=3.11.1)", "pytest-timeout (>=2.1)", "pytest (>=7.4)"]
+typing = ["typing-extensions (>=4.7.1)"]
 
 [[package]]
 name = "fonttools"
@@ -851,6 +918,18 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "logical-unification"
+version = "0.4.6"
+description = "Logical unification in Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+multipledispatch = "*"
+toolz = "*"
+
+[[package]]
 name = "markupsafe"
 version = "2.1.3"
 description = "Safely add untrusted strings to HTML/XML markup."
@@ -891,12 +970,35 @@ python-versions = ">=3.5"
 traitlets = "*"
 
 [[package]]
+name = "minikanren"
+version = "1.0.3"
+description = "Relational programming in Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+cons = ">=0.4.0"
+etuples = ">=0.3.1"
+logical-unification = ">=0.4.1"
+multipledispatch = "*"
+toolz = "*"
+
+[[package]]
 name = "mistune"
 version = "3.0.2"
 description = "A sane and fast Markdown parser with useful plugins and renderers"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "multipledispatch"
+version = "1.0.0"
+description = "Multiple dispatch"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "nbclient"
@@ -1014,11 +1116,11 @@ test = ["pytest", "pytest-console-scripts", "pytest-jupyter", "pytest-tornasync"
 
 [[package]]
 name = "numpy"
-version = "1.26.0"
+version = "1.25.2"
 description = "Fundamental package for array computing in Python"
 category = "main"
 optional = false
-python-versions = "<3.13,>=3.9"
+python-versions = ">=3.9"
 
 [[package]]
 name = "overrides"
@@ -1038,6 +1140,47 @@ python-versions = ">=3.7"
 
 [[package]]
 name = "pandas"
+version = "2.1.0"
+description = "Powerful data structures for data analysis, time series, and statistics"
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.dependencies]
+numpy = [
+    {version = ">=1.22.4", markers = "python_version < \"3.11\""},
+    {version = ">=1.23.2", markers = "python_version >= \"3.11\""},
+]
+python-dateutil = ">=2.8.2"
+pytz = ">=2020.1"
+tzdata = ">=2022.1"
+
+[package.extras]
+test = ["hypothesis (>=6.46.1)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)", "pytest-asyncio (>=0.17.0)"]
+performance = ["bottleneck (>=1.3.4)", "numba (>=0.55.2)", "numexpr (>=2.8.0)"]
+computation = ["scipy (>=1.8.1)", "xarray (>=2022.03.0)"]
+fss = ["fsspec (>=2022.05.0)"]
+aws = ["s3fs (>=2022.05.0)"]
+gcp = ["gcsfs (>=2022.05.0)", "pandas-gbq (>=0.17.5)"]
+excel = ["odfpy (>=1.4.1)", "openpyxl (>=3.0.10)", "pyxlsb (>=1.0.9)", "xlrd (>=2.0.1)", "xlsxwriter (>=3.0.3)"]
+parquet = ["pyarrow (>=7.0.0)"]
+feather = ["pyarrow (>=7.0.0)"]
+hdf5 = ["tables (>=3.7.0)"]
+spss = ["pyreadstat (>=1.1.5)"]
+postgresql = ["SQLAlchemy (>=1.4.36)", "psycopg2 (>=2.9.3)"]
+mysql = ["SQLAlchemy (>=1.4.36)", "pymysql (>=1.0.2)"]
+sql-other = ["SQLAlchemy (>=1.4.36)"]
+html = ["beautifulsoup4 (>=4.11.1)", "html5lib (>=1.1)", "lxml (>=4.8.0)"]
+xml = ["lxml (>=4.8.0)"]
+plot = ["matplotlib (>=3.6.1)"]
+output-formatting = ["jinja2 (>=3.1.2)", "tabulate (>=0.8.10)"]
+clipboard = ["PyQt5 (>=5.15.6)", "qtpy (>=2.2.0)"]
+compression = ["zstandard (>=0.17.0)"]
+consortium-standard = ["dataframe-api-compat (>=0.1.7)"]
+all = ["beautifulsoup4 (>=4.11.1)", "bottleneck (>=1.3.4)", "dataframe-api-compat (>=0.1.7)", "fastparquet (>=0.8.1)", "fsspec (>=2022.05.0)", "gcsfs (>=2022.05.0)", "html5lib (>=1.1)", "hypothesis (>=6.46.1)", "jinja2 (>=3.1.2)", "lxml (>=4.8.0)", "matplotlib (>=3.6.1)", "numba (>=0.55.2)", "numexpr (>=2.8.0)", "odfpy (>=1.4.1)", "openpyxl (>=3.0.10)", "pandas-gbq (>=0.17.5)", "psycopg2 (>=2.9.3)", "pyarrow (>=7.0.0)", "pymysql (>=1.0.2)", "PyQt5 (>=5.15.6)", "pyreadstat (>=1.1.5)", "pytest (>=7.3.2)", "pytest-xdist (>=2.2.0)", "pytest-asyncio (>=0.17.0)", "pyxlsb (>=1.0.9)", "qtpy (>=2.2.0)", "scipy (>=1.8.1)", "s3fs (>=2022.05.0)", "SQLAlchemy (>=1.4.36)", "tables (>=3.7.0)", "tabulate (>=0.8.10)", "xarray (>=2022.03.0)", "xlrd (>=2.0.1)", "xlsxwriter (>=3.0.3)", "zstandard (>=0.17.0)"]
+
+[[package]]
+name = "pandas"
 version = "2.1.1"
 description = "Powerful data structures for data analysis, time series, and statistics"
 category = "main"
@@ -1048,7 +1191,6 @@ python-versions = ">=3.9"
 numpy = [
     {version = ">=1.22.4", markers = "python_version < \"3.11\""},
     {version = ">=1.23.2", markers = "python_version == \"3.11\""},
-    {version = ">=1.26.0", markers = "python_version >= \"3.12\""},
 ]
 python-dateutil = ">=2.8.2"
 pytz = ">=2020.1"
@@ -1097,21 +1239,6 @@ python-versions = ">=3.6"
 [package.extras]
 qa = ["flake8 (==3.8.3)", "mypy (==0.782)"]
 testing = ["docopt", "pytest (<6.0.0)"]
-
-[[package]]
-name = "patsy"
-version = "0.5.3"
-description = "A Python package for describing statistical models and for building design matrices."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-numpy = ">=1.4"
-six = "*"
-
-[package.extras]
-test = ["pytest", "pytest-cov", "scipy"]
 
 [[package]]
 name = "pexpect"
@@ -1228,22 +1355,22 @@ python-versions = ">=3.7"
 plugins = ["importlib-metadata"]
 
 [[package]]
-name = "pymc3"
-version = "3.9.3"
-description = "Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with Theano"
+name = "pymc"
+version = "5.9.0"
+description = "Probabilistic Programming in Python: Bayesian Modeling and Probabilistic Machine Learning with PyTensor"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.9"
 
 [package.dependencies]
-arviz = ">=0.9.0"
+arviz = ">=0.13.0"
+cachetools = ">=4.2.1"
+cloudpickle = "*"
 fastprogress = ">=0.2.0"
-h5py = ">=2.7.0"
-numpy = ">=1.13.0"
-pandas = ">=0.18.0"
-patsy = ">=0.5.1"
-scipy = ">=0.18.1"
-theano = ">=1.0.5"
+numpy = ">=1.15.0"
+pandas = ">=0.24.0"
+pytensor = ">=2.17.0,<2.18"
+scipy = ">=1.4.1"
 typing-extensions = ">=3.7.4"
 
 [[package]]
@@ -1256,6 +1383,32 @@ python-versions = ">=3.6.8"
 
 [package.extras]
 diagrams = ["railroad-diagrams", "jinja2"]
+
+[[package]]
+name = "pytensor"
+version = "2.17.1"
+description = "Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs."
+category = "main"
+optional = false
+python-versions = ">=3.9"
+
+[package.dependencies]
+cons = "*"
+etuples = "*"
+filelock = "*"
+logical-unification = "*"
+miniKanren = "*"
+numpy = ">=1.17.0,<1.26"
+scipy = ">=0.14"
+typing-extensions = "*"
+
+[package.extras]
+complete = ["pytensor", "pytensor"]
+development = ["pytensor", "pytensor", "pytensor"]
+jax = ["jax", "jaxlib"]
+numba = ["numba (>=0.55)", "numba-scipy (>=0.3.0)"]
+rtd = ["sphinx (>=5.1.0,<6)", "pygments", "pydot", "pydot2", "pydot-ng"]
+tests = ["pytest", "pre-commit", "pytest-cov (>=2.6.1)", "coverage (>=5.1)", "pytest-benchmark", "pytest-mock"]
 
 [[package]]
 name = "python-dateutil"
@@ -1294,7 +1447,7 @@ python-versions = "*"
 
 [[package]]
 name = "pywinpty"
-version = "2.0.11"
+version = "2.0.12"
 description = "Pseudo terminal support for Windows from Python."
 category = "main"
 optional = false
@@ -1501,6 +1654,17 @@ pure-eval = "*"
 tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
 
 [[package]]
+name = "tensorstore"
+version = "0.1.24"
+description = "Read and write large, multi-dimensional arrays"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+numpy = ">=1.16.0"
+
+[[package]]
 name = "terminado"
 version = "0.17.1"
 description = "Tornado websocket backend for the Xterm.js Javascript terminal emulator library."
@@ -1516,23 +1680,6 @@ tornado = ">=6.1.0"
 [package.extras]
 docs = ["myst-parser", "pydata-sphinx-theme", "sphinx"]
 test = ["pre-commit", "pytest-timeout", "pytest (>=7.0)"]
-
-[[package]]
-name = "theano"
-version = "1.0.5"
-description = "Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-numpy = ">=1.9.1"
-scipy = ">=0.14"
-six = ">=1.9.0"
-
-[package.extras]
-doc = ["Sphinx (>=0.5.1)", "pygments"]
-test = ["nose (>=1.3.0)", "parameterized", "flake8"]
 
 [[package]]
 name = "tinycss2"
@@ -1556,6 +1703,14 @@ description = "A lil' TOML parser"
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "toolz"
+version = "0.12.0"
+description = "List processing tools and functional utilities"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [[package]]
 name = "tornado"
@@ -1729,7 +1884,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9, <3.13"
-content-hash = "c5a5796f6a92cea685b73bb02da99e32d32bf1df8754f072a253c2a00236b39e"
+content-hash = "12640a841216b1892ce6e593174407d2bef669fa7f5f20d1b66fa617896891eb"
 
 [metadata.files]
 anyio = []
@@ -1770,11 +1925,14 @@ backcall = [
 ]
 beautifulsoup4 = []
 bleach = []
+cachetools = []
 certifi = []
 cffi = []
 charset-normalizer = []
+cloudpickle = []
 colorama = []
 comm = []
+cons = []
 contourpy = []
 cycler = []
 debugpy = []
@@ -1783,10 +1941,12 @@ defusedxml = [
     {file = "defusedxml-0.7.1-py2.py3-none-any.whl", hash = "sha256:a352e7e428770286cc899e2542b6cdaedb2b4953ff269a210103ec58f6198a61"},
     {file = "defusedxml-0.7.1.tar.gz", hash = "sha256:1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"},
 ]
+etuples = []
 exceptiongroup = []
 executing = []
 fastjsonschema = []
 fastprogress = []
+filelock = []
 fonttools = []
 fqdn = []
 h5netcdf = []
@@ -1825,10 +1985,13 @@ jupyterlab-pygments = []
 jupyterlab-server = []
 jupyterlab-widgets = []
 kiwisolver = []
+logical-unification = []
 markupsafe = []
 matplotlib = []
 matplotlib-inline = []
+minikanren = []
 mistune = []
+multipledispatch = []
 nbclient = []
 nbconvert = []
 nbformat = []
@@ -1847,7 +2010,6 @@ parso = [
     {file = "parso-0.8.3-py2.py3-none-any.whl", hash = "sha256:c001d4636cd3aecdaf33cbb40aebb59b094be2a74c556778ef5576c175e19e75"},
     {file = "parso-0.8.3.tar.gz", hash = "sha256:8c07be290bb59f03588915921e29e8a50002acaf2cdc5fa0e0114f91709fafa0"},
 ]
-patsy = []
 pexpect = [
     {file = "pexpect-4.8.0-py2.py3-none-any.whl", hash = "sha256:0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937"},
     {file = "pexpect-4.8.0.tar.gz", hash = "sha256:fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"},
@@ -1871,8 +2033,9 @@ pycparser = [
     {file = "pycparser-2.21.tar.gz", hash = "sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"},
 ]
 pygments = []
-pymc3 = []
+pymc = []
 pyparsing = []
+pytensor = []
 python-dateutil = [
     {file = "python-dateutil-2.8.2.tar.gz", hash = "sha256:0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"},
     {file = "python_dateutil-2.8.2-py2.py3-none-any.whl", hash = "sha256:961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"},
@@ -1900,10 +2063,11 @@ six = [
 sniffio = []
 soupsieve = []
 stack-data = []
+tensorstore = []
 terminado = []
-theano = []
 tinycss2 = []
 tomli = []
+toolz = []
 tornado = []
 traitlets = []
 types-python-dateutil = []
