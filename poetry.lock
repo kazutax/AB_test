@@ -299,7 +299,7 @@ test-no-images = ["pytest", "pytest-cov", "wurlitzer"]
 
 [[package]]
 name = "cycler"
-version = "0.12.0"
+version = "0.12.1"
 description = "Composable style cycles"
 category = "main"
 optional = false
@@ -1884,7 +1884,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9, <3.13"
-content-hash = "12640a841216b1892ce6e593174407d2bef669fa7f5f20d1b66fa617896891eb"
+content-hash = "de5cb01687d15857a41d0857b285777dc2d22401b35c995598ea6414d0e7ace3"
 
 [metadata.files]
 anyio = []
