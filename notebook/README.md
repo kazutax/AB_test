@@ -12,5 +12,12 @@ def model(y = None, g = None, num+data = 0):
         numpyro.sample('obs', dist.Poisson(mu_dup), obs = y)　# 2種類
     mu_diff = numpyro.deterministic('mu_diff', mu[1] = mu[0])
 ```
-  + 指数分布の方が良さそうな場合あるか（これはWebで始める機械学習読んでて、滞在時間連続値のところで出てきたが、実際のDVCVの値はこれに連動するかもと思った）
-  + 
++ 指数分布の方が良さそうな場合あるか（これはWebで始める機械学習読んでて、滞在時間連続値のところで出てきたが、実際のDVCVの値はこれに連動するかもと思った）
+  + ┗ これはゼロ過剰ポワソンとかで良さそう
+ 
+
+# なんかわかってないこと
+
++ NUTS のアルゴリズム
++ PRNGKey の意味
++ 
