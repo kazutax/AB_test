@@ -18,6 +18,7 @@ def model(y = None, g = None, num+data = 0):
 
 # なんかわかってないこと
 
++ 共役（きょうやく）事前分布とは何か？そのメリットは？[参考サイト](https://ai-trend.jp/basic-study/bayes/conjugate-prior-distribution/)
 + NUTS のアルゴリズム
 + PRNGKey の意味
 + 
